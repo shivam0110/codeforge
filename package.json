@@ -1,0 +1,66 @@
+{
+  "name": "changeforge",
+  "version": "0.1.0",
+  "description": "Verify Git changes with structured Codex findings and optional Playwright differential evidence.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "changeforge": "dist/bin.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shivam0110/codeforge"
+  },
+  "files": [
+    "dist",
+    "docs",
+    "README.md",
+    "ARCHITECTURE.md",
+    "todo.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\" && tsc && node scripts/make-bin-executable.mjs",
+    "dev": "tsx src/bin.ts",
+    "test": "vitest run",
+    "lint": "eslint src tests",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "dependencies": {
+    "commander": "^14.0.0",
+    "execa": "^9.6.0",
+    "open": "^10.2.0",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^24.10.1",
+    "eslint": "^9.39.2",
+    "prettier": "^3.7.4",
+    "tsx": "^4.21.0",
+    "typescript-eslint": "^8.50.0",
+    "vitest": "^4.0.15"
+  },
+  "keywords": [
+    "codex",
+    "playwright",
+    "testing",
+    "git",
+    "cli",
+    "change-docs"
+  ],
+  "license": "MIT"
+}

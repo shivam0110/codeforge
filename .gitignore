@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.changeforge/runs/
+.changeforge/locks/
+changeforge/*/
+allure-results/
+allure-report/
+*.log
+.DS_Store
