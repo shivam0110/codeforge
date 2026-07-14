@@ -184,7 +184,9 @@ describe("CLI integration", () => {
       "--no-open",
     ]);
     expect(fallback.stdout).toContain("Code review:");
-    expect(fallback.stdout).toContain("changeforge/run-2/code-review.md");
+    expect(fallback.stdout).toContain(
+      join("changeforge", "run-2", "code-review.md"),
+    );
   });
 
   test("clean previews, selects, retains, and removes runs", async () => {
